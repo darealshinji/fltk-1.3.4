@@ -1,8 +1,3 @@
-/* FLTK *************************************************************** */
-/* FLTK   Comments marked with FLTK show modifications for FLTK which	*/
-/* FLTK   should probably be preserved when the JPEG lib is upgraded.	*/
-/* FLTK *************************************************************** */
-
 /* jconfig.h.  Generated from jconfig.cfg by configure.  */
 /* jconfig.cfg --- source file edited by configure script */
 /* see jconfig.txt for explanations */
@@ -13,9 +8,9 @@
 /* #undef void */
 /* #undef const */
 /* #undef CHAR_IS_UNSIGNED */
-/* #define HAVE_STDDEF_H 1 */		/* FLTK */
+#define HAVE_STDDEF_H 1
 #define HAVE_STDLIB_H 1
-/* #define HAVE_LOCALE_H 1 */		/* FLTK */
+#define HAVE_LOCALE_H 1
 /* #undef NEED_BSD_STRINGS */
 /* #undef NEED_SYS_TYPES_H */
 /* #undef NEED_FAR_POINTERS */
@@ -40,7 +35,7 @@ typedef unsigned char boolean;
 #ifdef JPEG_INTERNALS
 
 /* #undef RIGHT_SHIFT_IS_UNSIGNED */
-/* #define INLINE __inline__ */		/* FLTK */
+#define INLINE __inline__
 /* These are for configuring the JPEG memory manager. */
 /* #undef DEFAULT_MAX_MEM */
 /* #undef NO_MKTEMP */
@@ -58,14 +53,6 @@ typedef unsigned char boolean;
 /* #undef TWO_FILE_COMMANDLINE */
 /* #undef NEED_SIGNAL_CATCHER */
 /* #undef DONT_USE_B_MODE */
-
-#if 0					/* FLTK 1.3.3 (disabled in FLTK 1.3.4) */
-
-#if defined(WIN32) || defined(__EMX__)
-#  define USE_SETMODE
-#endif /* WIN32 || __EMX__ */
-
-#endif					/* FLTK 1.3.3 (disabled in FLTK 1.3.4) */
 
 /* Define this if you want percent-done progress reports from cjpeg/djpeg. */
 /* #undef PROGRESS_REPORT */
