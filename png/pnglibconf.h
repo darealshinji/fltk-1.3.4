@@ -1,3 +1,8 @@
+/* FLTK *************************************************************** */
+/* FLTK   Comments marked with FLTK show modifications for FLTK which   */
+/* FLTK   should probably be preserved when libpng is upgraded.         */
+/* FLTK *************************************************************** */
+
 /* pnglibconf.h - library build configuration */
 
 /* libpng version 1.6.28, January 5, 2017 */
@@ -204,7 +209,8 @@
 #define PNG_USER_HEIGHT_MAX 1000000
 #define PNG_USER_WIDTH_MAX 1000000
 #define PNG_ZBUF_SIZE 8192
-#define PNG_ZLIB_VERNUM 0x1280
+/*#define PNG_ZLIB_VERNUM 0x1280*/
+#define PNG_ZLIB_VERNUM 0x0 /* FLTK: disable check */
 #define PNG_Z_DEFAULT_COMPRESSION (-1)
 #define PNG_Z_DEFAULT_NOFILTER_STRATEGY 0
 #define PNG_Z_DEFAULT_STRATEGY 1

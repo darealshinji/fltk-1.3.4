@@ -1,3 +1,8 @@
+/* FLTK *************************************************************** */
+/* FLTK   Comments marked with FLTK show modifications for FLTK which   */
+/* FLTK   should probably be preserved when zlib is upgraded.           */
+/* FLTK *************************************************************** */
+
 /* zlib.h -- interface of the 'zlib' general purpose compression library
   version 1.2.11, January 15th, 2017
 
@@ -1775,21 +1780,23 @@ ZEXTERN int ZEXPORT inflateBackInit_ OF((z_streamp strm, int windowBits,
                                          unsigned char FAR *window,
                                          const char *version,
                                          int stream_size));
-#ifdef Z_PREFIX_SET
-#  define z_deflateInit(strm, level) \
+
+/* FLTK: enable prefixing with "fltk_" */
+//#ifdef Z_PREFIX_SET
+#  define fltk_deflateInit(strm, level) \
           deflateInit_((strm), (level), ZLIB_VERSION, (int)sizeof(z_stream))
-#  define z_inflateInit(strm) \
+#  define fltk_inflateInit(strm) \
           inflateInit_((strm), ZLIB_VERSION, (int)sizeof(z_stream))
-#  define z_deflateInit2(strm, level, method, windowBits, memLevel, strategy) \
+#  define fltk_deflateInit2(strm, level, method, windowBits, memLevel, strategy) \
           deflateInit2_((strm),(level),(method),(windowBits),(memLevel),\
                         (strategy), ZLIB_VERSION, (int)sizeof(z_stream))
-#  define z_inflateInit2(strm, windowBits) \
+#  define fltk_inflateInit2(strm, windowBits) \
           inflateInit2_((strm), (windowBits), ZLIB_VERSION, \
                         (int)sizeof(z_stream))
-#  define z_inflateBackInit(strm, windowBits, window) \
+#  define fltk_inflateBackInit(strm, windowBits, window) \
           inflateBackInit_((strm), (windowBits), (window), \
                            ZLIB_VERSION, (int)sizeof(z_stream))
-#else
+/* #else
 #  define deflateInit(strm, level) \
           deflateInit_((strm), (level), ZLIB_VERSION, (int)sizeof(z_stream))
 #  define inflateInit(strm) \
@@ -1803,7 +1810,7 @@ ZEXTERN int ZEXPORT inflateBackInit_ OF((z_streamp strm, int windowBits,
 #  define inflateBackInit(strm, windowBits, window) \
           inflateBackInit_((strm), (windowBits), (window), \
                            ZLIB_VERSION, (int)sizeof(z_stream))
-#endif
+#endif */
 
 #ifndef Z_SOLO
 

@@ -1,3 +1,8 @@
+/* FLTK *************************************************************** */
+/* FLTK   Comments marked with FLTK show modifications for FLTK which   */
+/* FLTK   should probably be preserved when zlib is upgraded.           */
+/* FLTK *************************************************************** */
+
 /* zconf.h -- configuration of the zlib compression library
  * Copyright (C) 1995-2016 Jean-loup Gailly, Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
@@ -8,162 +13,168 @@
 #ifndef ZCONF_H
 #define ZCONF_H
 
+/* FLTK */
+#if ! (defined(_WIN32) || defined(WIN32))
+#  define HAVE_UNISTD_H
+#endif
+
 /*
  * If you *really* need a unique prefix for all types and library functions,
  * compile with -DZ_PREFIX. The "standard" zlib should be compiled without it.
  * Even better than compiling with -DZ_PREFIX would be to use configure to set
  * this permanently in zconf.h using "./configure --zprefix".
  */
-#ifdef Z_PREFIX     /* may be set to #if 1 by ./configure */
+/* FLTK: enable prefixing with "fltk_" */
+//#ifdef Z_PREFIX     /* may be set to #if 1 by ./configure */
 #  define Z_PREFIX_SET
 
 /* all linked symbols and init macros */
-#  define _dist_code            z__dist_code
-#  define _length_code          z__length_code
-#  define _tr_align             z__tr_align
-#  define _tr_flush_bits        z__tr_flush_bits
-#  define _tr_flush_block       z__tr_flush_block
-#  define _tr_init              z__tr_init
-#  define _tr_stored_block      z__tr_stored_block
-#  define _tr_tally             z__tr_tally
-#  define adler32               z_adler32
-#  define adler32_combine       z_adler32_combine
-#  define adler32_combine64     z_adler32_combine64
-#  define adler32_z             z_adler32_z
+#  define _dist_code            fltk__dist_code
+#  define _length_code          fltk__length_code
+#  define _tr_align             fltk__tr_align
+#  define _tr_flush_bits        fltk__tr_flush_bits
+#  define _tr_flush_block       fltk__tr_flush_block
+#  define _tr_init              fltk__tr_init
+#  define _tr_stored_block      fltk__tr_stored_block
+#  define _tr_tally             fltk__tr_tally
+#  define adler32               fltk_adler32
+#  define adler32_combine       fltk_adler32_combine
+#  define adler32_combine64     fltk_adler32_combine64
+#  define adler32_z             fltk_adler32_z
 #  ifndef Z_SOLO
-#    define compress              z_compress
-#    define compress2             z_compress2
-#    define compressBound         z_compressBound
+#    define compress              fltk_compress
+#    define compress2             fltk_compress2
+#    define compressBound         fltk_compressBound
 #  endif
-#  define crc32                 z_crc32
-#  define crc32_combine         z_crc32_combine
-#  define crc32_combine64       z_crc32_combine64
-#  define crc32_z               z_crc32_z
-#  define deflate               z_deflate
-#  define deflateBound          z_deflateBound
-#  define deflateCopy           z_deflateCopy
-#  define deflateEnd            z_deflateEnd
-#  define deflateGetDictionary  z_deflateGetDictionary
-#  define deflateInit           z_deflateInit
-#  define deflateInit2          z_deflateInit2
-#  define deflateInit2_         z_deflateInit2_
-#  define deflateInit_          z_deflateInit_
-#  define deflateParams         z_deflateParams
-#  define deflatePending        z_deflatePending
-#  define deflatePrime          z_deflatePrime
-#  define deflateReset          z_deflateReset
-#  define deflateResetKeep      z_deflateResetKeep
-#  define deflateSetDictionary  z_deflateSetDictionary
-#  define deflateSetHeader      z_deflateSetHeader
-#  define deflateTune           z_deflateTune
-#  define deflate_copyright     z_deflate_copyright
-#  define get_crc_table         z_get_crc_table
+#  define crc32                 fltk_crc32
+#  define crc32_combine         fltk_crc32_combine
+#  define crc32_combine64       fltk_crc32_combine64
+#  define crc32_z               fltk_crc32_z
+#  define deflate               fltk_deflate
+#  define deflateBound          fltk_deflateBound
+#  define deflateCopy           fltk_deflateCopy
+#  define deflateEnd            fltk_deflateEnd
+#  define deflateGetDictionary  fltk_deflateGetDictionary
+#  define deflateInit           fltk_deflateInit
+#  define deflateInit2          fltk_deflateInit2
+#  define deflateInit2_         fltk_deflateInit2_
+#  define deflateInit_          fltk_deflateInit_
+#  define deflateParams         fltk_deflateParams
+#  define deflatePending        fltk_deflatePending
+#  define deflatePrime          fltk_deflatePrime
+#  define deflateReset          fltk_deflateReset
+#  define deflateResetKeep      fltk_deflateResetKeep
+#  define deflateSetDictionary  fltk_deflateSetDictionary
+#  define deflateSetHeader      fltk_deflateSetHeader
+#  define deflateTune           fltk_deflateTune
+#  define deflate_copyright     fltk_deflate_copyright
+#  define get_crc_table         fltk_get_crc_table
 #  ifndef Z_SOLO
-#    define gz_error              z_gz_error
-#    define gz_intmax             z_gz_intmax
-#    define gz_strwinerror        z_gz_strwinerror
-#    define gzbuffer              z_gzbuffer
-#    define gzclearerr            z_gzclearerr
-#    define gzclose               z_gzclose
-#    define gzclose_r             z_gzclose_r
-#    define gzclose_w             z_gzclose_w
-#    define gzdirect              z_gzdirect
-#    define gzdopen               z_gzdopen
-#    define gzeof                 z_gzeof
-#    define gzerror               z_gzerror
-#    define gzflush               z_gzflush
-#    define gzfread               z_gzfread
-#    define gzfwrite              z_gzfwrite
-#    define gzgetc                z_gzgetc
-#    define gzgetc_               z_gzgetc_
-#    define gzgets                z_gzgets
-#    define gzoffset              z_gzoffset
-#    define gzoffset64            z_gzoffset64
-#    define gzopen                z_gzopen
-#    define gzopen64              z_gzopen64
+#    define gz_error              fltk_gz_error
+#    define gz_intmax             fltk_gz_intmax
+#    define gz_strwinerror        fltk_gz_strwinerror
+#    define gzbuffer              fltk_gzbuffer
+#    define gzclearerr            fltk_gzclearerr
+#    define gzclose               fltk_gzclose
+#    define gzclose_r             fltk_gzclose_r
+#    define gzclose_w             fltk_gzclose_w
+#    define gzdirect              fltk_gzdirect
+#    define gzdopen               fltk_gzdopen
+#    define gzeof                 fltk_gzeof
+#    define gzerror               fltk_gzerror
+#    define gzflush               fltk_gzflush
+#    define gzfread               fltk_gzfread
+#    define gzfwrite              fltk_gzfwrite
+#    define gzgetc                fltk_gzgetc
+#    define gzgetc_               fltk_gzgetc_
+#    define gzgets                fltk_gzgets
+#    define gzoffset              fltk_gzoffset
+#    define gzoffset64            fltk_gzoffset64
+#    define gzopen                fltk_gzopen
+#    define gzopen64              fltk_gzopen64
 #    ifdef _WIN32
-#      define gzopen_w              z_gzopen_w
+#      define gzopen_w              fltk_gzopen_w
 #    endif
-#    define gzprintf              z_gzprintf
-#    define gzputc                z_gzputc
-#    define gzputs                z_gzputs
-#    define gzread                z_gzread
-#    define gzrewind              z_gzrewind
-#    define gzseek                z_gzseek
-#    define gzseek64              z_gzseek64
-#    define gzsetparams           z_gzsetparams
-#    define gztell                z_gztell
-#    define gztell64              z_gztell64
-#    define gzungetc              z_gzungetc
-#    define gzvprintf             z_gzvprintf
-#    define gzwrite               z_gzwrite
+#    define gzprintf              fltk_gzprintf
+#    define gzputc                fltk_gzputc
+#    define gzputs                fltk_gzputs
+#    define gzread                fltk_gzread
+#    define gzrewind              fltk_gzrewind
+#    define gzseek                fltk_gzseek
+#    define gzseek64              fltk_gzseek64
+#    define gzsetparams           fltk_gzsetparams
+#    define gztell                fltk_gztell
+#    define gztell64              fltk_gztell64
+#    define gzungetc              fltk_gzungetc
+#    define gzvprintf             fltk_gzvprintf
+#    define gzwrite               fltk_gzwrite
 #  endif
-#  define inflate               z_inflate
-#  define inflateBack           z_inflateBack
-#  define inflateBackEnd        z_inflateBackEnd
-#  define inflateBackInit       z_inflateBackInit
-#  define inflateBackInit_      z_inflateBackInit_
-#  define inflateCodesUsed      z_inflateCodesUsed
-#  define inflateCopy           z_inflateCopy
-#  define inflateEnd            z_inflateEnd
-#  define inflateGetDictionary  z_inflateGetDictionary
-#  define inflateGetHeader      z_inflateGetHeader
-#  define inflateInit           z_inflateInit
-#  define inflateInit2          z_inflateInit2
-#  define inflateInit2_         z_inflateInit2_
-#  define inflateInit_          z_inflateInit_
-#  define inflateMark           z_inflateMark
-#  define inflatePrime          z_inflatePrime
-#  define inflateReset          z_inflateReset
-#  define inflateReset2         z_inflateReset2
-#  define inflateResetKeep      z_inflateResetKeep
-#  define inflateSetDictionary  z_inflateSetDictionary
-#  define inflateSync           z_inflateSync
-#  define inflateSyncPoint      z_inflateSyncPoint
-#  define inflateUndermine      z_inflateUndermine
-#  define inflateValidate       z_inflateValidate
-#  define inflate_copyright     z_inflate_copyright
-#  define inflate_fast          z_inflate_fast
-#  define inflate_table         z_inflate_table
+#  define inflate               fltk_inflate
+#  define inflateBack           fltk_inflateBack
+#  define inflateBackEnd        fltk_inflateBackEnd
+#  define inflateBackInit       fltk_inflateBackInit
+#  define inflateBackInit_      fltk_inflateBackInit_
+#  define inflateCodesUsed      fltk_inflateCodesUsed
+#  define inflateCopy           fltk_inflateCopy
+#  define inflateEnd            fltk_inflateEnd
+#  define inflateGetDictionary  fltk_inflateGetDictionary
+#  define inflateGetHeader      fltk_inflateGetHeader
+#  define inflateInit           fltk_inflateInit
+#  define inflateInit2          fltk_inflateInit2
+#  define inflateInit2_         fltk_inflateInit2_
+#  define inflateInit_          fltk_inflateInit_
+#  define inflateMark           fltk_inflateMark
+#  define inflatePrime          fltk_inflatePrime
+#  define inflateReset          fltk_inflateReset
+#  define inflateReset2         fltk_inflateReset2
+#  define inflateResetKeep      fltk_inflateResetKeep
+#  define inflateSetDictionary  fltk_inflateSetDictionary
+#  define inflateSync           fltk_inflateSync
+#  define inflateSyncPoint      fltk_inflateSyncPoint
+#  define inflateUndermine      fltk_inflateUndermine
+#  define inflateValidate       fltk_inflateValidate
+#  define inflate_copyright     fltk_inflate_copyright
+#  define inflate_fast          fltk_inflate_fast
+#  define inflate_table         fltk_inflate_table
 #  ifndef Z_SOLO
-#    define uncompress            z_uncompress
-#    define uncompress2           z_uncompress2
+#    define uncompress            fltk_uncompress
+#    define uncompress2           fltk_uncompress2
 #  endif
-#  define zError                z_zError
+#  define zError                fltk_zError
 #  ifndef Z_SOLO
-#    define zcalloc               z_zcalloc
-#    define zcfree                z_zcfree
+#    define zcalloc               fltk_zcalloc
+#    define zcfree                fltk_zcfree
 #  endif
-#  define zlibCompileFlags      z_zlibCompileFlags
-#  define zlibVersion           z_zlibVersion
+#  define zlibCompileFlags      fltk_zlibCompileFlags
+#  define zlibVersion           fltk_zlibVersion
 
 /* all zlib typedefs in zlib.h and zconf.h */
-#  define Byte                  z_Byte
-#  define Bytef                 z_Bytef
-#  define alloc_func            z_alloc_func
-#  define charf                 z_charf
-#  define free_func             z_free_func
+#  define Byte                  fltk_Byte
+#  define Bytef                 fltk_Bytef
+#  define alloc_func            fltk_alloc_func
+#  define charf                 fltk_charf
+#  define free_func             fltk_free_func
 #  ifndef Z_SOLO
-#    define gzFile                z_gzFile
+#    define gzFile                fltk_gzFile
 #  endif
-#  define gz_header             z_gz_header
-#  define gz_headerp            z_gz_headerp
-#  define in_func               z_in_func
-#  define intf                  z_intf
-#  define out_func              z_out_func
-#  define uInt                  z_uInt
-#  define uIntf                 z_uIntf
-#  define uLong                 z_uLong
-#  define uLongf                z_uLongf
-#  define voidp                 z_voidp
-#  define voidpc                z_voidpc
-#  define voidpf                z_voidpf
+#  define gz_header             fltk_gz_header
+#  define gz_headerp            fltk_gz_headerp
+#  define in_func               fltk_in_func
+#  define intf                  fltk_intf
+#  define out_func              fltk_out_func
+#  define uInt                  fltk_uInt
+#  define uIntf                 fltk_uIntf
+#  define uLong                 fltk_uLong
+#  define uLongf                fltk_uLongf
+#  define voidp                 fltk_voidp
+#  define voidpc                fltk_voidpc
+#  define voidpf                fltk_voidpf
 
 /* all zlib structs in zlib.h and zconf.h */
-#  define gz_header_s           z_gz_header_s
-#  define internal_state        z_internal_state
+#  define gz_header_s           fltk_gz_header_s
+#  define internal_state        fltk_internal_state
 
-#endif
+//#endif  /* FLTK */
 
 #if defined(__MSDOS__) && !defined(MSDOS)
 #  define MSDOS

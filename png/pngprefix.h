@@ -1,3 +1,8 @@
+/* FLTK */
+/* Automatically generated with the following command:
+ * ./configure --with-libpng-prefix=fltk_ --disable-shared && make pngprefix.h
+ *
+ * Also check if PNG_PREFIX was set correctly in pnglibconf.h */
 #define png_sRGB_table fltk_png_sRGB_table
 #define png_sRGB_base fltk_png_sRGB_base
 #define png_sRGB_delta fltk_png_sRGB_delta
