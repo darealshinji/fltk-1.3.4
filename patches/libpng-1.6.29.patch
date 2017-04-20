@@ -8,8 +8,8 @@
 +
  /* pnglibconf.h - library build configuration */
  
- /* libpng version 1.6.28, January 5, 2017 */
-@@ -204,7 +209,8 @@
+ /* libpng version 1.6.29, March 16, 2017 */
+@@ -206,7 +211,8 @@
  #define PNG_USER_HEIGHT_MAX 1000000
  #define PNG_USER_WIDTH_MAX 1000000
  #define PNG_ZBUF_SIZE 8192
