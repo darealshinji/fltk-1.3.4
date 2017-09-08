@@ -40,6 +40,7 @@
 #define png_write_sBIT fltk_png_write_sBIT
 #define png_write_cHRM_fixed fltk_png_write_cHRM_fixed
 #define png_write_sRGB fltk_png_write_sRGB
+#define png_write_eXIf fltk_png_write_eXIf
 #define png_write_iCCP fltk_png_write_iCCP
 #define png_write_sPLT fltk_png_write_sPLT
 #define png_write_tRNS fltk_png_write_tRNS
@@ -77,6 +78,7 @@
 #define png_handle_IEND fltk_png_handle_IEND
 #define png_handle_bKGD fltk_png_handle_bKGD
 #define png_handle_cHRM fltk_png_handle_cHRM
+#define png_handle_eXIf fltk_png_handle_eXIf
 #define png_handle_gAMA fltk_png_handle_gAMA
 #define png_handle_hIST fltk_png_handle_hIST
 #define png_handle_iCCP fltk_png_handle_iCCP
@@ -93,6 +95,7 @@
 #define png_handle_tRNS fltk_png_handle_tRNS
 #define png_handle_zTXt fltk_png_handle_zTXt
 #define png_check_chunk_name fltk_png_check_chunk_name
+#define png_check_chunk_length fltk_png_check_chunk_length
 #define png_handle_unknown fltk_png_handle_unknown
 #define png_chunk_unknown_handling fltk_png_chunk_unknown_handling
 #define png_do_read_transformations fltk_png_do_read_transformations

@@ -5,7 +5,7 @@
 
 /* pnglibconf.h - library build configuration */
 
-/* libpng version 1.6.30, June 28, 2017 */
+/* libpng version 1.6.32, August 24, 2017 */
 
 /* Copyright (c) 1998-2017 Glenn Randers-Pehrson */
 
@@ -87,6 +87,7 @@
 #define PNG_READ_USER_TRANSFORM_SUPPORTED
 #define PNG_READ_bKGD_SUPPORTED
 #define PNG_READ_cHRM_SUPPORTED
+#define PNG_READ_eXIf_SUPPORTED
 #define PNG_READ_gAMA_SUPPORTED
 #define PNG_READ_hIST_SUPPORTED
 #define PNG_READ_iCCP_SUPPORTED
@@ -156,6 +157,7 @@
 #define PNG_WRITE_WEIGHTED_FILTER_SUPPORTED
 #define PNG_WRITE_bKGD_SUPPORTED
 #define PNG_WRITE_cHRM_SUPPORTED
+#define PNG_WRITE_eXIf_SUPPORTED
 #define PNG_WRITE_gAMA_SUPPORTED
 #define PNG_WRITE_hIST_SUPPORTED
 #define PNG_WRITE_iCCP_SUPPORTED
@@ -173,6 +175,7 @@
 #define PNG_WRITE_zTXt_SUPPORTED
 #define PNG_bKGD_SUPPORTED
 #define PNG_cHRM_SUPPORTED
+#define PNG_eXIf_SUPPORTED
 #define PNG_gAMA_SUPPORTED
 #define PNG_hIST_SUPPORTED
 #define PNG_iCCP_SUPPORTED
@@ -260,6 +263,8 @@
 #define png_get_copyright fltk_png_get_copyright
 #define png_get_current_pass_number fltk_png_get_current_pass_number
 #define png_get_current_row_number fltk_png_get_current_row_number
+#define png_get_eXIf fltk_png_get_eXIf
+#define png_get_eXIf_1 fltk_png_get_eXIf_1
 #define png_get_error_ptr fltk_png_get_error_ptr
 #define png_get_filter_type fltk_png_get_filter_type
 #define png_get_gAMA fltk_png_get_gAMA
@@ -376,6 +381,8 @@
 #define png_set_compression_strategy fltk_png_set_compression_strategy
 #define png_set_compression_window_bits fltk_png_set_compression_window_bits
 #define png_set_crc_action fltk_png_set_crc_action
+#define png_set_eXIf fltk_png_set_eXIf
+#define png_set_eXIf_1 fltk_png_set_eXIf_1
 #define png_set_error_fn fltk_png_set_error_fn
 #define png_set_expand fltk_png_set_expand
 #define png_set_expand_16 fltk_png_set_expand_16
