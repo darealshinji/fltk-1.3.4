@@ -3,6 +3,7 @@
  * ./configure --with-libpng-prefix=fltk_ --disable-shared && make pngprefix.h
  *
  * Also check if PNG_PREFIX was set correctly in pnglibconf.h */
+#define png_write_row fltk_png_write_row
 #define png_sRGB_table fltk_png_sRGB_table
 #define png_sRGB_base fltk_png_sRGB_base
 #define png_sRGB_delta fltk_png_sRGB_delta
