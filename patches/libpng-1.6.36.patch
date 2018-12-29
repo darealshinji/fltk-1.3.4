@@ -8,8 +8,8 @@
 +
  /* pnglibconf.h - library build configuration */
  
- /* libpng version 1.6.35, July 15, 2018 */
-@@ -209,7 +214,8 @@
+ /* libpng version 1.6.36 */
+@@ -210,7 +215,8 @@
  #define PNG_USER_HEIGHT_MAX 1000000
  #define PNG_USER_WIDTH_MAX 1000000
  #define PNG_ZBUF_SIZE 8192
@@ -21,13 +21,12 @@
  #define PNG_Z_DEFAULT_STRATEGY 1
 --- a/png/pngprefix.h
 +++ b/png/pngprefix.h
-@@ -1,3 +1,9 @@
+@@ -1,3 +1,8 @@
 +/* FLTK */
 +/* Automatically generated with the following command:
 + * ./configure --with-libpng-prefix=fltk_ --disable-shared && make pngprefix.h
 + *
 + * Also check if PNG_PREFIX was set correctly in pnglibconf.h */
-+#define png_write_row fltk_png_write_row
  #define png_sRGB_table fltk_png_sRGB_table
  #define png_sRGB_base fltk_png_sRGB_base
  #define png_sRGB_delta fltk_png_sRGB_delta
